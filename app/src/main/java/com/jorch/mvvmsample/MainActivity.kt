@@ -17,16 +17,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this).get() //viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
-        viewModel.progressVisibility.observe(this, {
-            binding.resultProgress = it
-        })
+        binding.resultViewModel = viewModel
+        binding.lifecycleOwner = this
 
-        viewModel.message.observe(this, { binding.resultMessage = it })
-
-        with(binding){
-            button.setOnClickListener {
-                viewModel.onButtonClicked(user = user.text.toString(), password = pass.text.toString())
-            }
-        }
     }
 }

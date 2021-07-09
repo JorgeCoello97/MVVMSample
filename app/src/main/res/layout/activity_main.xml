@@ -6,11 +6,8 @@
     <data>
         <import type="android.view.View"/>
         <variable
-            name="resultProgress"
-            type="boolean" />
-        <variable
-            name="resultMessage"
-            type="String" />
+            name="resultViewModel"
+            type="com.jorch.mvvmsample.MainViewModel" />
     </data>
 
     <LinearLayout
@@ -45,21 +42,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LOGIN"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:onClick="@{ () -> resultViewModel.onButtonClicked(user.getText().toString(), pass.getText().toString()) }"/>
 
         <TextView
             android:id="@+id/message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@{ resultMessage }"/>
+            android:text="@{ resultViewModel.message }"/>
 
         <ProgressBar
             android:id="@+id/progress"
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="@{resultProgress ? View.VISIBLE : View.GONE}"
+            android:visibility="@{resultViewModel.progressVisibility ? View.VISIBLE : View.GONE}"
             android:layout_gravity="center" />
     </LinearLayout>
 </layout>
