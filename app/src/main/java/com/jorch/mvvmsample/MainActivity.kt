@@ -2,7 +2,6 @@ package com.jorch.mvvmsample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import com.jorch.mvvmsample.databinding.ActivityMainBinding
@@ -19,10 +18,10 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get() //viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         viewModel.progressVisibility.observe(this, {
-            binding.progress.visibility = if (it) View.VISIBLE else View.GONE
+            binding.resultProgress = it
         })
 
-        viewModel.message.observe(this, { binding.message.text = it })
+        viewModel.message.observe(this, { binding.resultMessage = it })
 
         with(binding){
             button.setOnClickListener {
