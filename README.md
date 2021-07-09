@@ -1,14 +1,12 @@
-# MVVM Sample
+# MVP Sample
 ## Description
-Test about pattern design. First MVP and then MVVM.
+Test about MVP design pattern.
 
 ## Targets
 * Use MPV
-* Use MVVM
 
 ## Knowledge obtained
 * Data binding
 * Coroutines
 * Live templates
-* MVP pattern design
-* MVVM pattern design
+* MVP design pattern
