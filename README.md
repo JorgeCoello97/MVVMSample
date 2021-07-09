@@ -10,5 +10,5 @@ Test about design patterns. First MVP and then MVVM.
 * Data binding
 * Coroutines
 * Live templates
-* MVP pattern design
-* MVVM pattern design
+* MVP  design pattern
+* MVVM design pattern
