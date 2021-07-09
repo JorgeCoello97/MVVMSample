@@ -57,7 +57,7 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="@{resultViewModel.progressVisibility ? View.VISIBLE : View.GONE}"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            app:visible="@{resultViewModel.progressVisibility}"/>
     </LinearLayout>
 </layout>
