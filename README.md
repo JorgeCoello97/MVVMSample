@@ -7,7 +7,7 @@ Unused DataBinding.
 * Use MVVM
 
 ## Knowledge obtained
-* Data binding
+* View Binding
 * Coroutines
 * Live templates
 * MVVM design pattern
