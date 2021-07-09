@@ -1,6 +1,6 @@
 # MVVM Sample
 ## Description
-Test about pattern design. First MVP and then MVVM.
+Test about design patterns. First MVP and then MVVM.
 
 ## Targets
 * Use MPV
