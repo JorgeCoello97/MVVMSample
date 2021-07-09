@@ -7,7 +7,7 @@ Test about design patterns. First MVP and then MVVM.
 * Use MVP design pattern
 * Use DataBinding
 * Use ViewBinding
-* 
+
 ## Knowledge obtained
 * Data Binding
 * View Binding
