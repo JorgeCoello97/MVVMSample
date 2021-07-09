@@ -5,27 +5,28 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.jorch.mvvmsample.databinding.ActivityMainBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainPresenter.MainView {
+    private lateinit var binding: ActivityMainBinding
+    private val mainPresenter by lazy { MainPresenter(this, lifecycleScope) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        lifecycleScope
         with(binding){
             button.setOnClickListener {
-                lifecycleScope.launch {
-                    progress.visibility = View.VISIBLE
-                    message.text = withContext(Dispatchers.IO){
-                        Thread.sleep(2000)
-                        if (user.text.isNotEmpty() && pass.text.isNotEmpty()) "Success" else "Failure"
-                    }
-                    progress.visibility = View.GONE
-                }
+                mainPresenter.onButtonClicked(user = user.text.toString(), password = pass.text.toString())
             }
         }
+    }
+
+    override fun setProgressVisible(visible: Boolean) {
+        binding.progress.visibility = if (visible) View.VISIBLE else View.GONE
+    }
+
+    override fun setMessage(message: String) {
+        binding.message.text = message
     }
 }

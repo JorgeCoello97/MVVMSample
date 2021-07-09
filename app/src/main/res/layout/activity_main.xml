@@ -15,7 +15,8 @@
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:imeOptions="actionNext"/>
 
     <EditText
         android:id="@+id/pass"
@@ -24,7 +25,8 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:imeOptions="actionDone"/>
 
     <Button
         android:id="@+id/button"
