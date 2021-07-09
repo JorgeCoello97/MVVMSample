@@ -1,13 +1,13 @@
 # MVVM Sample
 ## Description
 Test about a MVVM design pattern.
-Unused DataBinding.
+Using DataBinding.
 
 ## Targets
 * Use MVVM
 
 ## Knowledge obtained
-* Data binding
+* Data Binding
 * Coroutines
 * Live templates
 * MVVM design pattern
